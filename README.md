@@ -1,21 +1,22 @@
 ##TinyMCE editor for Laravel and Lumen Framework
 Powerful WYSIWYG editor with easy installation and already configured to use quickly and simply.
+Based on https://github.com/ktquez/laravel-tinymce
 
 [![Latest Stable Version](https://poser.pugx.org/ktquez/laravel-tinymce/v/stable)](https://packagist.org/packages/ktquez/laravel-tinymce) [![Total Downloads](https://poser.pugx.org/ktquez/laravel-tinymce/downloads)](https://packagist.org/packages/ktquez/laravel-tinymce) [![Latest Unstable Version](https://poser.pugx.org/ktquez/laravel-tinymce/v/unstable)](https://packagist.org/packages/ktquez/laravel-tinymce) [![License](https://poser.pugx.org/ktquez/laravel-tinymce/license)](https://packagist.org/packages/ktquez/laravel-tinymce)
 
 ## How to use
-Just add the line in his view, well above the ``<textarea id="tinymce">``:<br>
+Just add the line in his view, well above the ``<textarea class="tinymce">``:<br>
 `` @include('tinymce::tpl')  ``
 
 If you want to be available globally, just add the tag ``<head>``
 
 ## Instalation
-``` composer require ktquez/laravel-tinymce ```
+``` composer require fsicurezza/laravel-tinymce ```
 
 ## Laravel
 Add in ``config/app.php``: <br>
 ``` 
-'Ktquez\Tinymce\TinymceServiceProvider' 
+'Ktquez\Tinymce\TinymceServiceProvider'
 ```
 
 Finally, publish the files: <br>
@@ -43,16 +44,16 @@ Set the path of ``tinymce.min.js`` file:
 ```
 
 Set customization parameters of TinyMCE:
-Set the ``id`` of the textarea
+Set the ``class`` or the ``id`` of the textarea
 ```
 'params' => [
-		"selector" => "#tinymce",
+		"selector" => ".tinymce",
 		...
 ```
 
-Sets the language editor, available in the package ``de, es, pt_BR and fr_FR``
+Sets the language editor, available in the package ``de, en_GB, es, fr_FR, it, pt_BR and zh_CN``
 ```
-"language" => 'pt_BR',
+"language" => 'it',
 ```
 
 Skin editor, available in the package ``lightgray, charcoal and tundora``
@@ -63,23 +64,13 @@ Skin editor, available in the package ``lightgray, charcoal and tundora``
 Add plugins and toolbar, by default:
 ```
 "plugins" => [
-    "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-    "save table contextmenu directionality emoticons template paste textcolor"
-	  ],
-"toolbar" => "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
+	"advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+	"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+	"save table contextmenu directionality emoticons template paste textcolor"
+],
+"toolbar" => ["insertfile undo redo | paste | styleselect | sizeselect fontselect fontsizeselect bold italic | alignleft aligncenter alignright alignjustify",
+	"bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons | code"],
 ```
 
 ##### To learn more, just access the [TinyMCE](http://www.tinymce.com/wiki.php/TinyMCE) documentation 
 TinyMCE : Current Version [4.2.1](http://www.tinymce.com/download/download.php) 
-
-
-
-
-
-
-
-
-
-
-
